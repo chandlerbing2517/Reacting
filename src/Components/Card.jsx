@@ -23,7 +23,7 @@ function Card() {
           <p className='text-sm'>
             {item.Description}
           </p>
-          <button className={`px-4 py-1 mt-3 text-sm text-zinc-100 rounded ${item.instock ? "bg-green-500" : "bg-red-500"}`}>
+          <button onMouseOver={()=>alert("Chal gaya")} className={`px-4 py-1 mt-3 text-sm text-zinc-100 rounded ${item.instock ? "bg-green-500" : "bg-red-500"}`}>
             {item.instock ? "In Stock" : "Out of Stock"}
           </button>
         </div>
