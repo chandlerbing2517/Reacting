@@ -1,7 +1,9 @@
 import React from 'react';
 
 
-
+function handlerover(){
+  alert("working!");
+}
 const data = [
   {image: 'https://images.unsplash.com/photo-1633174524778-61a18ee54490?q=80&w=2096&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',name: "Amazon Basics", Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.", instock: true},
   {image: 'https://media.istockphoto.com/id/1288818126/photo/toothbrushes-on-pink-background-with-copy-space-top-view.jpg?s=1024x1024&w=is&k=20&c=vcx9PTsPR7J-Cy6P4QRtU6zAV7ms0jMQS5xJVJX9V0Q=', name: "Daily Objects", Description: "Lorem ipsum dolor sit amet consectetur adipisicing", instock: false},
@@ -9,27 +11,15 @@ const data = [
 ]
 function Card() {
   return (
-    <div className='w-full h-screen  flex items-center gap-10 justify-center bg-zinc-200'>
-      {data.map((item, index) => (
-      <div className='w-52 bg-zinc-100 rounded-md overflow-hidden' key={index}>
-        <div className='w-full h-full bg-zinc-300'>
-          <img
-            className='w-full h-full object-cover'
-            src={item.image}
-          ></img>
-        </div>
-        <div className='w-full px-3 py-4'>
-          <h1 className='font-semibold' >{item.name}</h1>
-          <p className='text-sm'>
-            {item.Description}
-          </p>
-          <button onMouseOver={()=>alert("Chal gaya")} className={`px-4 py-1 mt-3 text-sm text-zinc-100 rounded ${item.instock ? "bg-green-500" : "bg-red-500"}`}>
-            {item.instock ? "In Stock" : "Out of Stock"}
-          </button>
-        </div>
+      <div className='w-full h-screen bg-zinc-200 flex flex-col gap-10 items-center justify-center'>
+            {data.map((item,value)=>(
+                        <div className='w-90 px-3 py-2 bg-white rounded-md'>
+            <h3 className='font-semibold text-xl'> {item.name}</h3>
+            <p className='text-xs mt-2'> Lorem ipsum dolor sit amet.</p>
+            <button onMouseOver={handlerover} className='bg-blue-300 rounded mt-3 px-2 py-1 text-sm text-zinc-100'>Download Now!</button>
+          </div>
+            ))}
       </div>
-      ))}
-    </div>
   );
 }
 
