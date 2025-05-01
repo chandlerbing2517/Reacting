@@ -2,15 +2,15 @@ import React from 'react'
 import Card from './Components/Card'
 
 function App() {
-  const [score, setScore] = React.useState({name: "sajal", isAllowed: false});
+  const [arr, setarr] = React.useState([1,2,3,4,5,6,7,8,9,10]);
 
   return (
    <div>
-   <h1 className='p-4'>{score.name}</h1>
-   <h1 className='p-4'>{score.isAllowed.toString()}</h1>
-   <button onClick={()=>{
-    setScore({...score, isAllowed: !score.isAllowed})
-  }} className={`px-2 py-1 rounded mt-2 ${score.isAllowed ? 'bg-red-300' : 'bg-blue-300'} text-xs text-zinc-200`}>Click me</button>
+    {arr.map(item=><h1>
+          {item}
+        </h1>
+    )}
+   <button onClick={()=>setarr(()=>arr.filter((item,index)=> index!=arr.length-1))} className='px-2 py-1 rounded mt-2 bg-red-300 text-xs text-zinc-200'>Click me</button>
    </div>
         
 
