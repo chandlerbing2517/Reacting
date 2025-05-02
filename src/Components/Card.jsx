@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Card({name, image, profession}) {
+function Card({values,handlemouseclick, index}) {
+  const {name, profession, image,friends} = values; 
 
   return (
 
@@ -11,7 +12,7 @@ function Card({name, image, profession}) {
           <div className='w-full p-3'>
           <h3 className='text-sm'>{name}</h3>
           <h5 className='text-xs'>{profession}</h5>
-          <button className='px-3 py-1 bg-blue-500 text-xs text-white font-semibold rounded-md mt-1'> Add Friend</button>
+          <button onClick={()=>handlemouseclick(index)} className='px-3 py-1 bg-blue-500 text-xs text-white font-semibold rounded-md mt-1'> {friends?"Add Friend":"Lose Friend"}</button>
         </div>
       </div>
   );
