@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import Card from './Components/Card'
 import NavBar from './Components/NavBar';
+import { data } from 'autoprefixer';
 
 function App() {
 
-const [name,setName]=useState({name: ""});
-const handleSubmit=(event)=>{
-  event.preventDefault();
-  console.log(name);
-}
+const {register, handleSubmit} = useForm()
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <input onChange={(event)=>setName({name: event.target.value})} placeholder='name' type='text'></input>
+    <form action="" onSubmit={handleSubmit(data=>console.log(data))}>
+      <input {...register('name')} placeholder='name' type='text'></input>
       <input  placeholder='age' type='text'></input>
       <input type='submit'></input>
     </form>
