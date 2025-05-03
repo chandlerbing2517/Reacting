@@ -1,19 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import Card from './Components/Card'
 import NavBar from './Components/NavBar';
 
 function App() {
-const name= useRef(null);
-const age= useRef(null);
 
+const [name,setName]=useState({name: ""});
 const handleSubmit=(event)=>{
   event.preventDefault();
-  console.log(name.current.value);
+  console.log(name);
 }
   return (
     <form action="" onSubmit={handleSubmit}>
-      <input ref={name} placeholder='name' type='text'></input>
-      <input ref={age} placeholder='age' type='text'></input>
+      <input onChange={(event)=>setName({name: event.target.value})} placeholder='name' type='text'></input>
+      <input  placeholder='age' type='text'></input>
       <input type='submit'></input>
     </form>
   );
