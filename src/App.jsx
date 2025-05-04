@@ -1,19 +1,23 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import Card from './Components/Card'
-import NavBar from './Components/NavBar';
-import { data } from 'autoprefixer';
+import React, { useState } from 'react'
+import Cards from './Components/Cards'
+import Form from './Components/Form'
 
 function App() {
-
-const {register, handleSubmit} = useForm()
+  const [users,setUser]=useState([]);
+  const handleUser = (data) => {
+    setUser([...users, data]);
+  }
+      const handleRemove=(id)=>{
+        setUser(users.filter((user,index)=>index!==id))
+    }
   return (
-    <form action="" onSubmit={handleSubmit(data=>console.log(data))}>
-      <input {...register('name')} placeholder='name' type='text'></input>
-      <input  placeholder='age' type='text'></input>
-      <input type='submit'></input>
-    </form>
-  );
+    <div className='w-full h-screen bg-zinc-200 flex items-center justify-center'>
+      <div className='container mx-auto'>
+      <Cards handleRemove={handleRemove} users = {users}/>
+      <Form handleUser={handleUser}/>
+      </div>
+    </div>
+  )
 }
 
 export default App
