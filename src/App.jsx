@@ -3,16 +3,16 @@ import Cards from './Components/Cards'
 import Form from './Components/Form'
 import { Link, Route, Routes } from 'react-router-dom'
 import Home from './Components/Home'
+import User from './Components/User'
+import About from './Components/About'
+import NavBar from './Components/NavBar'
+import Routing from './utils/Routing'
 
 function App(){
   return (
             <>
-            <nav>
-            <Link to='/home' >App</Link>
-            </nav>
-            <Routes>
-              <Route path="/home" element={<Home/>} />
-            </Routes>
+            <NavBar />
+            <Routing />
             </>
   )
 }
