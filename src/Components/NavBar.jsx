@@ -11,14 +11,12 @@ function NavBar() {
               }}
             } to='/home' >Home</NavLink>
             <NavLink className={(e)=>{
-              return e.isActive ? 'text-red-500' : 'text-black'
+              return [e.isActive ? 'text-red-500' : 'text-black',
+              e.isActive ? 'font-bold' : ''
+              ].join(' ')
             }
             } to='/user' >User</NavLink>
-            <NavLink style={(e)=>{
-              return {
-                color: e.isActive ? 'tomato' : 'black'
-              }}
-            } to='/about'>About</NavLink>
+            <NavLink  to='/about'>About</NavLink>
         </nav>
     </div>
   )
