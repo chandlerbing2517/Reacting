@@ -11,7 +11,7 @@ function Routing() {
               <Route path="/home" element={<Home/>} />
               <Route path="/user" element={<User/>} />
               <Route path="/about" element={<About/>} />
-              <Route path="/user/:name" element={<UserDetails />} />
+              
             </Routes>
     </div>
   )
